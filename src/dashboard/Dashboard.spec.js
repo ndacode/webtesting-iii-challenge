@@ -1,21 +1,26 @@
 // Test away
+
+// shows the controls and display
+<Display locked={locked} closed={closed} />
+<Controls
+          locked={locked}
+          closed={closed}
+          toggleLocked={this.toggleLocked}
+          toggleClosed={this.toggleClosed}
+        />
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-// shows the controls and display
-
-describe('<Dashboard/>', () => {
-    it ('renders correctly', () => {
-        const tree = render
-        .create(<Dashboard/>)
-        .toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
+import { act } from 'react-testing-library';
 
 
-// describe('<Display/>', () => {
-//     it ('shows the controls and display', () => {
-//         const {getByText, findByText } = {<Display/>};
-//         expect(tree).toMatchSnapshot();
+
+
+
+// it('renders "sucess" text', () => {
+//     const { getByText, findByText } = (<App/>);
+//     act(() => {
+//         fireEvent.click(getByText("Get message!"));
 //     });
-// });
+//     findByText(/success/i)
+// })
+
